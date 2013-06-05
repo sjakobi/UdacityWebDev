@@ -47,9 +47,10 @@ def hello(request):
 
 @view_config(route_name="rot13", renderer="templates/rot13.pt")
 def rot13(request):
-    text = request.params["text"]
-    if text:
+    if "text" in request.params:
+        text = request.params["text"]
         text = rot13encoder(text)[0]
-    return {text: text}
+    else: text = ""
+    return {"text": text}
 
 rot13encoder = codecs.getencoder("rot_13")
