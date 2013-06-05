@@ -8,6 +8,9 @@ from .models import (
     MyModel,
     )
 
+# Udacity related imports
+import codecs
+
 
 @view_config(route_name='home', renderer='templates/mytemplate.pt')
 def my_view(request):
@@ -37,7 +40,16 @@ try it again.
 # Udacity Stuff here #
 ######################
 
-@ view_config(route_name="hello")
+@view_config(route_name="hello")
 def hello(request):
     name = request.matchdict["name"]
     return Response("Hello, {}!".format(name.capitalize()))
+
+@view_config(route_name="rot13", renderer="templates/rot13.pt")
+def rot13(request):
+    text = request.params["text"]
+    if text:
+        text = rot13encoder(text)[0]
+    return {text: text}
+
+rot13encoder = codecs.getencoder("rot_13")
