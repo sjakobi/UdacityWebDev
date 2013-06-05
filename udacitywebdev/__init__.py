@@ -21,6 +21,7 @@ def main(global_config, **settings):
     # Udacity Stuff here #
     ######################
     config.add_route("hello", "/hello/{name}")
+    config.add_route("rot13", "/rot13")
 
     ######################
     config.scan()
