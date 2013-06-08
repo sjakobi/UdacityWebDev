@@ -14,7 +14,7 @@ class ViewTests(unittest.TestCase):
         from udacitywebdev.views import hello_udacity
         request = testing.DummyRequest()
         response = hello_udacity(request)
-        self.assertEqual(response.status, "200 OK")
+        self.assertEqual(response["title"], "Hello, Udacity!")
 
 
 class FunctionalTests(unittest.TestCase):
