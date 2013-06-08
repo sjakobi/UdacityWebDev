@@ -1,0 +1,30 @@
+Unit 1:
+    Hello, Udacity!
+    /
+
+Unit 2:
+    ROT13
+    /rot13
+
+    Signup
+    /simplesignup
+
+Unit 3:
+    Blog with Front page (permalinks) and submit
+    /blog
+    /blog/submit
+
+Unit 4:
+    Registration (with cookies)
+    /signup
+
+    Login
+    /login
+
+    Logout
+    /logout
+
+Unit 5:
+    JSON
+    .*\.json
+
